@@ -1,0 +1,136 @@
+<html>
+	<head>
+		<style>
+			table,td{
+				margin-top : 20px;
+				text-align : center;
+				border : 1px solid black;
+			}
+			td{
+				padding:20px;
+				width:120px;
+			}
+		</style>
+		<script>
+		var r,x;
+			function fn(x)
+			{
+				var fn = document.getElementById("fn");
+				var ln = document.getElementById("ln");
+				var t = document.getElementById("tb");
+				t.style.display="";
+				
+				r = tb.insertRow(-1);
+				r.insertCell(0).innerHTML=fn.value;
+				r.insertCell(1).innerHTML=ln.value;
+				r.insertCell(2).innerHTML='<input type="button" value="Edit" onclick="ed(this)"> <input type="button" value="Delete" onclick="de(this)">';
+			}
+			function de(d)
+			{
+				var l = d.parentNode.parentNode;
+				var t = document.getElementById("tb");
+				t.deleteRow(l.rowIndex);
+			}
+			function ed(k)
+			{
+				update.style.display="";
+				submit.style.display="none";
+				x = k.parentNode.parentNode;
+				document.getElementById("fn").value=x.cells[0].innerHTML;
+				document.getElementById("ln").value=x.cells[1].innerHTML;
+			}
+			function up()
+			{
+				update.style.display="none";
+				submit.style.display="";
+				x.cells[0].innerHTML=document.getElementById("fn").value;
+				x.cells[1].innerHTML=document.getElementById("ln").value;
+			}
+		</script>
+	</head>
+	<body>
+	
+		First Name : <input type="text" id="fn"><br><br>
+		Last  Name : <input type="text" id="ln"><br><br>
+		<input type="submit" onclick="fn(this)" id="submit">
+		<input type="button" id="update" value="update" style="display:none" onclick="up()">
+		
+		<table id="tb" style="display:none">
+			<tr>
+				<td id="one">First Name</td>
+				<td>Last Name</td>
+				<td>Action</td>
+			</tr>
+		</table>
+		
+	</body>
+</html>
+
+<!-- 
+				let table = document.createElement('table');
+			let thead = document.createElement('thead');
+			let tbody = document.createElement('tbody');
+
+			table.appendChild(thead);
+			table.appendChild(tbody);
+
+			document.getElementById('body').appendChild(table);
+
+			let row_1 = document.createElement('tr');
+
+			let heading_1 = document.createElement('th');
+			heading_1.innerHTML = "Sr.No.";
+
+			let heading_2 = document.createElement('th');
+			heading_2.innerHTML = "FirstName";
+
+			let heading_3 = document.createElement('th');
+			heading_3.innerHTML = "LastName";
+
+			let heading_4 = document.createElement('th');
+			heading_4.innerHTML = "Username";
+			
+			let heading_5 = document.createElement('th');
+			heading_5.innerHTML = "Password";
+
+			row_1.appendChild(heading_1);
+			row_1.appendChild(heading_2);
+			row_1.appendChild(heading_3);
+			row_1.appendChild(heading_4);
+			row_1.appendChild(heading_5);
+			thead.appendChild(row_1);
+
+			for (var i = 1; i <= js.length; i++) {
+
+				let row_2 = document.createElement('tr');
+
+				let row_2_data_1 = document.createElement('td');
+				row_2_data_1.innerHTML = i;
+
+				let row_2_data_2 = document.createElement('td');
+				row_2_data_2.innerHTML = js[i-1].firstName;
+
+				let row_2_data_3 = document.createElement('td');
+				row_2_data_3.innerHTML = js[i-1].lastName;
+
+				let row_2_data_4 = document.createElement('td');
+				row_2_data_4.innerHTML = js[i-1].user;
+				
+				let row_2_data_5 = document.createElement('td');
+				row_2_data_5.innerHTML = js[i-1].pwd;
+
+				row_2.appendChild(row_2_data_1);
+				row_2.appendChild(row_2_data_2);
+				row_2.appendChild(row_2_data_3);
+				row_2.appendChild(row_2_data_4);
+				row_2.appendChild(row_2_data_5);
+
+				tbody.appendChild(row_2);
+
+				console.log("ID = " + js[i].id);
+				console.log("FN = " + js[i].firstName);
+				console.log("LN = " + js[i].lastName);
+				console.log("UN = " + js[i].user);
+				console.log("PWD = " + js[i].pwd);
+				console.log("\n");
+-->

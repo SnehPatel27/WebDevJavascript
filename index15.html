@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<script>
+		function fn(){
+			var k = parseInt(document.getElementById("val").value);
+			var p = document.getElementById("td");
+			p.style.display="";
+			var p = (k*(k+1))/2;
+			for(i=1;i<=k;i++)
+			{
+				var r = td.insertRow(-1);
+				r.insertCell(0).innerHTML=i;
+			}
+			r = td.insertRow(-1);
+			r.insertCell(0).innerHTML="Total = "+p;
+			}
+		</script>
+		<style>
+			table,td{
+				border:1px solid black;
+				width : 100px;
+				height : 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="val" ><br><br>
+		<input type="button" value="create" onclick="fn()">
+		<table id="td" style="display:none">
+		</table>
+	</body>
+</html>
+
+<!-- ${"Your hobbies are :"}
+ <c:forEach items="${sessionScope.hob}" var="k">${k}${" "}</c:forEach> -->

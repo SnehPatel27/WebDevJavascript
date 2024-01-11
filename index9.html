@@ -1,0 +1,113 @@
+<html>
+<head>
+	<style>
+		div{
+			border : 1px solid black;
+			height:200px;
+			width:200px;
+			float:left;
+			font-size:100px;
+		}
+		.a1{
+			clear:left;
+		}
+	</style>
+	<script>
+	var p=0;
+	var q=0;
+		function fn(x)
+		{
+			if(x.innerHTML=="")
+			{
+				if(p%2==0)
+				{	
+					x.innerHTML="O";
+				}
+				else
+				{
+					x.innerHTML="X";
+				}
+				p++;
+			}
+			win('a','b','c');
+			win('d','e','f');
+			win('g','h','i');
+			win('a','d','g');
+			win('b','e','h');
+			win('c','f','i');
+			win('a','e','i');
+			win('c','e','g');
+			if(p>8)
+			{
+				draw();
+			}
+			if(q>0)
+			{
+				remove();
+			}
+		}
+		function win(x,y,z)
+		{
+			var a = document.getElementById(x);
+			var b = document.getElementById(y);
+			var c = document.getElementById(z);
+			if(a.innerHTML=="O" && b.innerHTML=="O" && c.innerHTML=="O")
+			{
+				q++;
+				alert("O wins");
+			}
+			if(a.innerHTML=="X" && b.innerHTML=="X" && c.innerHTML=="X")
+			{
+				q++;
+				alert("X wins");
+			}
+		}
+		function draw()
+		{
+			if(q==0)
+			{
+				alert("Match Draw");
+				remove();
+			}
+		}
+		function remove()
+		{
+			var a = document.getElementById("a");
+			var b = document.getElementById("b");
+			var c = document.getElementById("c");
+			var d = document.getElementById("d");
+			var e = document.getElementById("e");
+			var f = document.getElementById("f");
+			var g = document.getElementById("g");
+			var h = document.getElementById("h");
+			var i = document.getElementById("i");
+			
+			a.innerHTML=null;
+			b.innerHTML=null;
+			c.innerHTML=null;
+			d.innerHTML=null;
+			e.innerHTML=null;
+			f.innerHTML=null;
+			g.innerHTML=null;
+			h.innerHTML=null;
+			i.innerHTML=null;
+		}
+	</script>
+	<style>
+		
+	</style>
+</head>
+<body>
+</body>
+<center>
+<div onclick="fn(this)" id="a"></div>
+<div onclick="fn(this)" id="b"></div>
+<div onclick="fn(this)" id="c"></div>
+<div onclick="fn(this)" id="d" class="a1"></div>
+<div onclick="fn(this)" id="e"></div>
+<div onclick="fn(this)" id="f"></div>
+<div onclick="fn(this)" id="g" class="a1"></div>
+<div onclick="fn(this)" id="h"></div>
+<div onclick="fn(this)" id="i"></div>
+</center>
+</html>

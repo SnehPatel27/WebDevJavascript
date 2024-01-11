@@ -1,0 +1,97 @@
+<html>
+	<head>
+		<style>
+			select{
+				width:200px;
+				height:200px;
+			}
+			input{
+				display:block;
+				margin:10px 10px;
+			}
+		</style>
+		<script>
+			function right()
+			{
+			
+				var a = document.getElementById('select1');
+				var b = document.getElementById('select2');
+
+				var index = a.selectedIndex;
+				var selected = a.options[index].innerHTML;//inner html of selected option is stored in selected variable
+				a.remove(index);//the selected index is removed
+
+				var option = document.createElement("option");//new option is created in second list
+				option.innerHTML = selected;//the value in selected variable is stored in new option created
+				b.add(option);//the new option along with its innerhtml is added in the new list
+			}
+			function left()
+			{
+				 var a = document.getElementById('select1');
+				 var b = document.getElementById('select2');
+
+				 var index = b.selectedIndex;
+				 var selected = b.options[index].innerHTML;//inner html of selected option is stored in selected variable
+				 b.remove(index);//the selected index is removed
+
+				 var option = document.createElement("option");//new option is created in second list
+				 option.innerHTML = selected;//the value in selected variable is stored in new option created
+                 a.add(option);//the new option along with its innerhtml is added in the new list
+			}
+			function all_left()
+			{
+				 var a = document.getElementById('select2');
+				 var b = document.getElementById('select1');
+			
+				 for(i=0;i<=b.length;i++)//loop starts from index 0 to last
+			     {
+					var selected = a.options[0].innerHTML;//value is assigned to selected variable
+					a.remove(0);//the selected index along with its value is removed
+
+					var option = document.createElement("option");//new option created
+					option.innerHTML = selected;//the value in selected variable is stored in new option created
+					b.add(option);
+				 }
+			}
+			function all_right()
+			{
+				var a = document.getElementById('select1');
+				var b = document.getElementById('select2');
+			
+				for(i=0;i<=b.length;i++)
+				{
+					var selected = a.options[0].innerHTML;//value is assigned to selected variable
+					a.remove(0);//the selected index along with its value is removed
+
+					var option = document.createElement("option");//new option created
+					option.innerHTML = selected;//the value in selected variable is stored in new option created
+					b.add(option);//the new option along with its innerhtml is added in the new list
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<select multiple style="float:left" id="select1">
+			<option id="a">a</option>
+			<option id="b">b</option>
+			<option id="c">c</option>
+			<option id="d">d</option>
+			
+			
+			
+			
+			
+			
+			
+			<option id="e">e</option>
+		</select >
+		<div style="float:left">
+		<input type="button" value=">" id="right" onclick="right()">
+		<input type="button" value="<" id="left" onclick="left()">
+		<input type="button" value=">>" id="all_right" onclick="all_right()">
+		<input type="button" value="<<" id="all_left" onclick="all_left()">
+		</div>
+		<select multiple id="select2">
+		</select>
+	</body>
+</html>

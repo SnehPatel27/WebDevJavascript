@@ -1,0 +1,21 @@
+<html>
+<head>
+<script>
+	function fn(x,y)
+	{
+		var n = document.getElementById("n");
+		var p = document.getElementById("y");		
+	
+		n.value = y;
+		p.value = x;
+	}
+</script>
+</head>
+<body>
+<center>
+	<h3>Are you Mad ?</h3>
+	<input type="button" value="Yes" id="y" onmouseover="fn('Yes','No')">
+	<input type="button" value="No" id="n" onmouseover="fn('No','Yes')">
+	</center>
+</body>
+</html>

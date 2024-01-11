@@ -1,0 +1,63 @@
+<html>
+<head>
+	<style>
+			table,td{
+				margin-top : 20px;
+				text-align : center;
+				border : 1px solid black;
+			}
+			td{
+				padding:20px;
+				width:120px;
+			}
+	</style>
+	<script>
+		var r,x;
+		var sum,sub,mul,div,per;
+			function fn(x)
+			{
+				var x = document.getElementById("x");
+				var y = document.getElementById("y");
+				var t = document.getElementById("tb");
+				
+				var x1 = parseInt(document.getElementById("x").value);
+				var y1 = parseInt(document.getElementById("y").value);
+				
+				sum = x1+y1;
+				mul = x1*y1;
+				div = x1/y1;
+				sub = x1-y1;
+				per = x1%y1;
+ 				t.style.display="";
+				
+				r = tb.insertRow(-1);
+				r.insertCell(0).innerHTML=x.value;
+				r.insertCell(1).innerHTML=y.value;
+				r.insertCell(2).innerHTML=sum;
+				r.insertCell(3).innerHTML=sub;
+				r.insertCell(4).innerHTML=mul;
+				r.insertCell(5).innerHTML=div;
+				r.insertCell(6).innerHTML=per;
+			}
+	</script>
+</head>
+<body>
+	
+		X : <input type="number" id="x"><br><br>
+		Y : <input type="number" id="y"><br><br>
+		<input type="submit" onclick="fn()" id="submit">
+		
+		<table id="tb" style="display:none">
+			<tr>
+				<td>X</td>
+				<td>Y</td>
+				<td>+</td>
+				<td>-</td>
+				<td>*</td>
+				<td>/</td>
+				<td>%</td>
+			</tr>
+		</table>
+		
+	</body>
+</html>

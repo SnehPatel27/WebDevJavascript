@@ -1,0 +1,32 @@
+<html>
+<head>
+<style>
+#d1{
+	border:1px solid black;
+	height:200px;
+	width:200px;
+}
+</style>
+<script>
+	
+	function fn()
+	{
+		d1.style.backgroundColor="red";
+	}
+		function fn1()
+	{
+		d1.style.backgroundColor="green";
+	}
+		function fn2()
+	{
+		d1.style.backgroundColor="blue";
+	}
+</script>
+</head>
+<body>
+<div id="d1"></div>
+<input type="radio" name="color" onclick="fn()">Red
+<input type="radio" name="color" onclick="fn1()">Green
+<input type="radio" name="color" onclick="fn2()">Blue
+</body>
+</html>

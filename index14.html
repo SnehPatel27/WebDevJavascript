@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<style>
+			div{
+				border : 1px solid black;
+			}
+			#price{
+				width : 100px;
+				margin-top : 15px
+			}
+			#price{
+				display:block;
+			}
+			
+		</style>
+		<script>
+			function fn()
+			{
+				var x = document.getElementById("no");
+				var p = parseInt(document.getElementById("no").value);
+				if(p>=1)
+				{
+					var k = document.getElementById("price");
+					x.value=++p;
+					price.value=250*p;
+				}
+				else
+				{
+					x.value=1;
+					k.value=250;
+				}
+			}
+			function fn1()
+			{
+				var x = document.getElementById("no");
+				var p = parseInt(document.getElementById("no").value);
+				if(p>1)
+				{
+					var k = document.getElementById("price");
+					x.value=--p;
+					price.value=250*p;
+				}
+				else
+				{
+					x.value=1;
+					k.value=250;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="+" onclick="fn()">
+			<input type="text" value="1" id="no">
+		<input type="button" value="-" onclick="fn1()">
+		
+		<input type="text" value="250" id="price">
+	</body>
+</html>

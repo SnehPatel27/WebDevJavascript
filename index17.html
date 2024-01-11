@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<script>
+		var i,str="";
+			function fn()
+			{
+				var fn = document.getElementById("fn");				
+				var ln = document.getElementById("ln");		
+				var c = document.getElementById("c")	
+				var gen = document.getElementsByName("gender");
+				var h = document.getElementsByName("hobby");
+				localStorage.setItem('fn',fn.value);
+				localStorage.setItem('ln',ln.value);
+				localStorage.setItem('c',c.value);
+				for(i=0;i<gen.length;i++)
+				{
+					if(gen[i].checked)
+					{
+						localStorage.setItem('gen',gen[i].value);
+					}
+				}
+				for(i=0;i<h.length;i++)
+				{
+					if(h[i].checked)
+					{
+						str = str +" "+ h[i].value;
+					}
+				}
+				localStorage.setItem('hobbies',str);
+			}
+		</script>
+	</head>
+	<body>
+		First Name : <input type="text" id="fn"><br><br>
+		Last Name : <input type="text" id="ln"><br><br>
+		Gender    : <input type="radio" name="gender" value="male">Male
+					<input type="radio" name="gender" value="female">Female<br><br>
+		City      : <select name="city" id="c">
+						<option>Ahmedabad</option>
+						<option>Gandhinagar</option>
+						<option>Hyderabad</option>
+						<option>Mumbai</option>
+					</select><br><br>
+		Hobbies   : <input type="checkbox" name="hobby" value="sports" id="sp">Sports
+					<input type="checkbox" name="hobby" value="singing" id="s">Singing
+					<input type="checkbox" name="hobby" value="Dancing" id="d">Dancing<br><br>
+		<a href="index17(2).html" onclick="fn()">submit</a>
+	</body>
+</html>

@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<script>
+		function fn()
+		{
+			var a = document.getElementById("fname");
+			var b = document.getElementById("mname");
+			var c = document.getElementById("lname");
+			
+			if(a.value=="")
+			{
+			 s1.style.display="";
+			 s1.style.color="red";
+			 a.style.border="1px solid red";
+			}
+			else
+			{
+			 s1.style.display="none";
+			 a.style.border="";
+			}
+			if(b.value=="")
+			{
+			 s2.style.display="";
+			 s2.style.color="red";
+			 b.style.border="1px solid red";
+			}
+			else
+			{
+			 s2.style.display="none";
+			 b.style.border="";
+			}
+			if(c.value=="")
+			{
+			 s3.style.display="";
+			 s3.style.color="red";
+			 c.style.border="1px solid red";
+			}
+			else
+			{
+			 s3.style.display="none";
+			 c.style.border="";
+			}
+		}
+		</script>
+		<style>
+			p
+			{
+				margin-left:10px;
+				display:inline;
+			}
+		</style>
+	<head>
+	<body>
+		FIRST NAME 	: <input type ="text"  id="fname"  onkeyup="fn()"> <p style="display:none" id="s1">PLEASE ENTER FIRST NAME<p><br><br>
+		MIDDLE NAME : <input type ="text"  id="mname" onkeyup="fn()"><p style="display:none" id="s2">PLEASE ENTER MIDDLE NAME<p><br><br>
+		LAST NAME   : <input type="text"  id="lname" onkeyup="fn()"><p style="display:none" id="s3">PLEASE ENTER LAST NAME<p><br><br>
+		<input type="button" value="Add" onclick="fn()">
+	</body>
+</html>

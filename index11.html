@@ -1,0 +1,169 @@
+<html>
+	<head>
+		<style>
+			#d1{
+				height : 600px;
+				width : 600px;
+				border : 1px solid black;
+				background-color:white;
+			}
+			#d2{
+				height : 100px;
+				width : 100px;
+				border : 1px solid black;
+				border-radius:100%;
+			}
+		</style>
+		<script>
+			var i=0;
+			var d,k;
+			function fn()
+			{
+			    d = document.getElementById("d2");
+				d.style.backgroundColor="pink";
+				d.style.marginTop=i + "px";
+				d.style.marginLeft=i + "px";
+				i=i+5;
+				if(i<=500)
+				{
+					setTimeout("fn()",10);
+				}
+				if(i>500)
+				{
+					i=5;
+					fn2();
+				}
+			}
+			function fn2()
+			{
+				d.style.backgroundColor="yellow";
+				d.style.marginTop = (500-i) + "px";
+				i=i+5;
+				if(i<=500)
+				{
+					setTimeout("fn2()",10);
+				}
+				if(i>500)
+				{
+					i=0;
+					fn3();
+				}	
+			}
+			function fn3()
+			{
+				d.style.backgroundColor="blue";
+				d.style.marginTop=i+"px";
+				d.style.marginLeft = (500-i)+"px";
+				i=i+5;
+				if(i<=500)
+				{
+					setTimeout("fn3()",10);
+				}
+				if(i>500)
+				{
+					i=0;
+					fn4();
+				}
+			}
+			function fn4()
+			{
+				d.style.backgroundColor="red";
+				d.style.marginTop = (500-i)+"px";
+				i=i+5;
+				if(i<=500)
+				{
+					setTimeout("fn4()",10);
+				}
+				if(i>500)
+				{
+					i=0;
+					fn();
+				}
+			}
+			
+		</script>
+	</head>
+	<body onload="fn()">
+		<div id="d1">
+			<div id="d2"></div>
+		</div>
+		<!--
+			d.style.marginRight = i+"px";
+			if(i>500)
+				{
+					i=0;
+					fn();
+				}
+				
+				
+				
+				
+				
+				var i=0;
+			var d,k;
+			function fn()
+			{
+			    d = document.getEleme	ntById("d2");
+				d.style.backgroundColor="pink";
+				d.style.marginTop=i + "px";
+				d.style.marginLeft=i + "px";
+				i=i+5;
+				if(i<=500)
+				{
+					setTimeout("fn()",10);
+				}
+				if(i>500)
+				{
+					i=5;
+					fn2();
+				}
+			}
+			function fn2()
+			{
+				d.style.backgroundColor="yellow";
+				d.style.marginLeft = (500-i) + "px";
+				i=i+5;
+				if(i<=500)
+				{
+					setTimeout("fn2()",10);
+				}
+				if(i>500)
+				{
+					i=0;
+					fn3();
+				}	
+			}
+			function fn3()
+			{
+				d.style.backgroundColor="blue";
+				d.style.marginLeft=i+"px";
+				d.style.marginTop = (500-i)+"px";
+				i=i+5;
+				if(i<=500)
+				{
+					setTimeout("fn3()",10);
+				}
+				if(i>500)
+				{
+					i=0;
+					fn4();
+				}
+			}
+			function fn4()
+			{
+				d.style.backgroundColor="red";
+				d.style.marginLeft = (500-i)+"px";
+				i=i+5;
+				if(i<=500)
+				{
+					setTimeout("fn4()",10);
+				}
+				if(i>500)
+				{
+					i=0;
+					fn();
+				}
+			}
+		-->
+	</body>
+</html>
